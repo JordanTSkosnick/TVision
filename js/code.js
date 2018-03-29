@@ -5,7 +5,7 @@ var recShows = ['Planet Earth 2', 'Band of Brothers', 'Planet Earth', 'Game Of T
 		'Life', 'Avatar: The Last Airbender', 'Sherlock', 'Human Planet', 'The Civil War', 'The Twilight Zone', 'Dekalog',
 	        'Firefly', 'True Detective', 'Fullmetal Alchemist: Brotherhood', 'Last Week Tonight with John Oliver', 'Fargo',
 	        'Batman: The Animated Series', 'Death Note', 'The Blue Planet', 'One Punch Man', 'Cowboy Bebop', 'Frozen Planet',
-	        'Black Mirror', "Monty Python's Flying Circus", 'Pride and Prejudice', 'Africa', 'Stranger Things', 'Das Boot',
+	        'Black Mirror', "Monty Python\'s Flying Circus", 'Pride and Prejudice', 'Africa', 'Stranger Things', 'Das Boot',
 	        'Westworld', 'Arrested Development', 'House of Cards', 'Friends', 'Seinfield', 'Only Fools and Horses....',
 	        'Over the Garden Wall', 'TVF Pitchers', 'Twin Peaks', 'Narcos', 'Freaks and Geeks', 'I, Claudius', 'Gravity Falls',
 	        'Fawlty Towers'];
