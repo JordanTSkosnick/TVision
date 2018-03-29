@@ -1,6 +1,6 @@
 //Jordan Skosnick
 //API KEY = a082f301
-
+var recShows = ['Game Of Thrones','Breaking Bad'];
 //Creates an on submit listener for the search bar on the index page.
 $(document).ready(function() {
   $('#searchForm').on('submit', function(e) {
@@ -11,7 +11,7 @@ $(document).ready(function() {
 });
 
 function getTVShows(showName) {
-	axios.get('http://www.omdbapi.com?s='+showName+'&type=series&apikey=a082f301') //Calls the API with the api key
+	axios.get('http://www.omdbapi.com?s='+recShows+'&type=series&apikey=a082f301') //Calls the API with the api key
 	.then( function(res) {
 		//console.log(res);
 		var showArr = res.data.Search;
