@@ -54,6 +54,37 @@ elseif (isset($_POST['login'], $_POST['password'])){
 
 }
 
+elseif (isset($_POST['id'], $_POST['showName'], $_POST['username'])){
+  	$id = $_POST['id'];
+	$showName = $_POST['showName'];
+	$username = $_POST['username'];
+
+	$query = "SELECT * FROM show WHERE showID = '$id'";
+	$result = $db->query($query);
+	$records = $result->fetchall();
+	if(!$records) {
+		$query1 = "INSERT INTO show (showID, name) VALUES ('$id','$showName')";
+		$result = $db->query($query1);
+		$records = $result->fetchall();
+	}
+
+	$query4 = "SELECT * FROM watches WHERE showID = '$id' AND username = '$username'";
+	$result = $db->query($query4);
+	$records = $result->fetchall();
+	if(!$records) {
+		$query3 = "INSERT INTO watches (showID, username, showname) VALUES ('$id', '$username', '$showName')";
+		$result = $db->query($query3);
+		$records = $result->fetchall();
+		$a = array("watched" => true);
+		$result = json_encode($a);
+		echo $result;
+	}
+	else {
+		$a = array("watched" => false);
+		$result = json_encode($a);
+		echo $result;
+	}
+}
 /**
 //if statement for when you will GET the rooms that are currently available
 if (isset($_GET['rooms'])){

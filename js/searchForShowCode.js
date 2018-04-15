@@ -23,7 +23,7 @@ function getMultipleShowInfo(keyword) {
               <img src="${showArr[i].Poster}" height="450" width="350">
               <h5>${showArr[i].Title}</h5>
               <a onclick="setShowID('${showArr[i].imdbID}')" class="btn btn-primary" href="showdetails.html">Show Details</a>
-              <a onclick="#" class="btn btn-primary" href="#">✪</a>
+              <a onclick="watchedShow('${showArr[i].imdbID}','${showArr[i].Title}')" class="btn btn-primary" href="#">✪</a>
             </div>
           </div>
         `;
@@ -34,4 +34,14 @@ function getMultipleShowInfo(keyword) {
 
 function setShowID(id){
 	sessionStorage.setItem('SHOW ID', id);
+}
+
+function watchedShow(id, showName){
+  var username = sessionStorage.getItem('username'); // change later so you have to be logged in
+  if(callDB.setWatchedShow(id, showName, username)){
+    alert("You watched this show.");
+  }
+  else {
+    alert("You have already watched this show.");
+  }
 }
