@@ -10,6 +10,8 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 //when its recieves a post request for login and password
 
+
+
 if (isset($_POST['email'], $_POST['login'], $_POST['password'])){
     $email = $_POST['email'];
   	$login = $_POST['login'];
@@ -85,6 +87,41 @@ elseif (isset($_POST['id'], $_POST['showName'], $_POST['username'])){
 		echo $result;
 	}
 }
+elseif (isset($_GET['username'])) {
+	$username = $_GET['username'];
+	$query = "SELECT showname FROM watches WHERE username = '$username'";
+	$result = $db->query($query);
+  	$records = $result->fetchall();
+	$arr = array();
+	for ($i = 0; $i < count($records); $i++) {
+		array_push($arr,$records[$i][0]);
+	}
+
+
+	$result = json_encode($arr);
+	echo $result;
+}
+
+/**
+if (isset($_GET['rooms'])){
+
+  $query = "SELECT name FROM rooms";
+  $result = $db->query($query);
+  $records = $result->fetchall();
+  $arr = array();
+  //this loops through the array of room names and pushes the room names into a new array
+  for ($i = 0; $i < count($records); $i++){
+    array_push($arr,$records[$i][0]);
+  }
+  $result = json_encode($arr);
+  echo $result;
+}
+
+*/
+
+
+
+
 /**
 //if statement for when you will GET the rooms that are currently available
 if (isset($_GET['rooms'])){

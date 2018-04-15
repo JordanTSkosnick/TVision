@@ -1,55 +1,100 @@
 <html>
-<head>Contact Us</head>
+<title>Contact Us</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <link rel = "stylesheet" type = "text/css" href = "css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+</head>
 <body>
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">TVision</a>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Search For a Show <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="ourrecommendedshows.html">Our Recommended Shows</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="account.html">Account</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="createaccount.html">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.html">Log in</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contactus.html">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
+<h3>Contact Us Form</h3>
 
+<div class="container">
+  <form action="mailto:jskos290@live.kutztown.edu" method="post" enctype="text/plain">
+    <label for="fname">Name</label>
+    <input type="text" id="fname" name="name" placeholder="Your name..">
 
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
 
-	
-<section id="footer">
-						<div class="inner">
-							<h2 class="major">Contact Us</h2>
-							<p>Want to request a show? Have questions? Contact us!</p>
-							<form method="post" action="mailto:jskos290@live.kutztown.edu">
-								<div class="field">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" />
-								</div>
-								<div class="field">
-									<label for="email">Email</label>
-									<input type="email" name="email" id="email" />
-								</div>
-								<div class="field">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" rows="4"></textarea>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="fa-home">
-									TVision Inc<br />
-									15200 Kutztown Rd<br />
-									Kutztown, PA 19530
-								</li>
-								<li class="fa-phone">(555) 555-5555</li>
-								<li class="fa-envelope"><a href="#">contact@tvision.com</a></li>
-								<li class="fa-twitter"><a href="#">twitter.com/TVisionInc</a></li>
-								<li class="fa-facebook"><a href="#">facebook.com/TVisionInc</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; TVision Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
+    <input type="submit" value="Submit">
+  </form>
+</div>
 
-			</div>
+<div>TVision Inc</div>
+<div>15200 Kutztown Rd.</div>
+<div>Kutztown, PA 19530</div>
+
+<p>Contact us at:<p>
+<ul>
+	<li><a href="contact@tvision.com">contact@tvision.com</a></li>
+	<li><a href="twitter.com/TVisionInc">twitter.com/TVisionInc</a></li>
+	<li><a href="facebook.com/TVisionInc">facebook.com/TVisionInc</a></li>
+</ul>
+
+<p> © Tvision Inc. ALL rights reserved.<p>
+<p>Design: <a href="http://html5up.net">HTML5 UP</a><p>
+
 </body>
 </html>

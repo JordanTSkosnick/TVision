@@ -17,10 +17,13 @@
 
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="js/accountCode.js"></script>
+	<script src="js/watchedShowsCode.js"></script>
+	<script src="js/callDB.js"></script>
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">TVision</a>
-  
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -38,28 +41,19 @@
       <li class="nav-item">
         <a class="nav-link" href="login.html">Log in</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contactus.html">Contact Us</a>
+      </li>
     </ul>
   </div>
 </nav>
 
+
 <!-- EXAMPLE OF WATCHED SHOWS TABLE THAT WILL BE CREATED FROM THE INFORAMTION FROM THE DATABASE -->  
-	<h3> &nbsp; JSKOZ57</h3>
-    <table class="table table-bordered">
+    <table class="table table-bordered" id="watchedShows">
           <tbody>
           <tr>
             <th>Watched Shows</th>
-          </tr>
-          <tr>
-            <td>Game of Thrones</td>
-          </tr>
-          <tr>
-            <td>Breaking Bad</td>
-          </tr>
-          <tr>
-            <td>Vikings</td>
-          </tr>
-          <tr>
-            <td>The Americans</td>
           </tr>
           </tbody>
     </table>  
