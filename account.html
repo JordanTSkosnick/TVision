@@ -22,25 +22,36 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">TVision</a>
+  <a class="navbar-brand" href="#">[TVišion]</a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">Search For a Show <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="ourrecommendedshows.html">Our Recommended Shows</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="account.html">Account</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="createaccount.html">Register</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="login.html">Log in</a>
-      </li>
+    <ul class="navbar-nav mr-auto" id = "navBar">
+
+    <script>
+      var output = '';
+      output += `<li class="nav-item active">
+                <a class="nav-link" href="index.html">Search For a Show <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ourrecommendedshows.html">Our Recommended Shows</a>
+              </li>`;
+    if(sessionStorage.getItem('username')) {
+      output += `      
+             <li class="nav-item">
+                 <a class="nav-link" href="account.html">Account</a>
+             </li>`;
+    }
+    else {
+      output += `<li class="nav-item">
+                  <a class="nav-link" href="createaccount.html">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="login.html">Log in</a>
+                </li>`;
+    }
+    $('#navBar').html(output);
+    </script>
+
       <li class="nav-item">
         <a class="nav-link" href="contactus.html">Contact Us</a>
       </li>

@@ -20,10 +20,10 @@ function getMultipleShowInfo(keyword) {
 			output += `
           <div class="col-4">
             <div class="well text-center">
-              <img src="${showArr[i].Poster}" height="450" width="350">
+              <img src="${showArr[i].Poster}" alt="Image not found" onerror="this.src='image-not-found.gif';" height="450" width="350">
               <h5>${showArr[i].Title}</h5>
               <a onclick="setShowID('${showArr[i].imdbID}')" class="btn btn-primary" href="showdetails.html">Show Details</a>
-              <a onclick="watchedShow('${showArr[i].imdbID}','${showArr[i].Title}')" class="btn btn-primary" href="#">✪</a>
+              <a onclick="watchedShow('${showArr[i].imdbID}','${showArr[i].Title}')" class="btn btn-primary" href="#">👁</a>
             </div>
           </div>
         `;

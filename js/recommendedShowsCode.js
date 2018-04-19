@@ -1,6 +1,6 @@
 //Jordan Skosnick
 //API KEY = a082f301
-var recShows = ['Seinfeld', 'The Walking Dead', 'Grey\'s Anatomy','Riverdale','Band of Brothers', 'Planet Earth', 'Game Of Thrones', 'Breaking Bad', 'The Wire', 
+var recShows = ['Seinfeld', 'The Walking Dead', 'Grey\'s Anatomy','Riverdale','Band of Brothers', 'Planet Earth', 'Game of Thrones', 'Breaking Bad', 'The Wire', 
 		'Rick and Morty', 'Cosmos: A Spacetime Odyssey', 'Blue Planet', 'Cosmos', 'The World at War', 'The Sopranos', 
 		'Life', 'Avatar: The Last Airbender', 'Sherlock', 'Human Planet', 'The Civil War', 'The Twilight Zone', 'Dekalog',
 	        'Firefly', 'True Detective', 'Fullmetal Alchemist: Brotherhood', 'Last Week Tonight with John Oliver', 'Fargo',
@@ -14,11 +14,16 @@ var recShows = ['Seinfeld', 'The Walking Dead', 'Grey\'s Anatomy','Riverdale','B
 
 $(document).ready(function() {
 	output='';
-  var watchedShows = "n/a";
+  var watchedShows = "Filler Show";
   if(sessionStorage.getItem('username')){
     var username = sessionStorage.getItem('username');
     var watchedShows = callDB.getWatchedShows(username);
+    console.log(watchedShows);
+    if(watchedShows == ''){
+      watchedShows = "Filler Show";
+    }
   }
+  console.log(watchedShows);
 	compareList(recShows, watchedShows);
 });
 
@@ -42,10 +47,10 @@ function getOneShowInfo(showname){
 		output += `
           <div class="col-4">
             <div  class="text-center">
-              <img src="${showArr.Poster}" height="450" width="350">
+              <img src="${showArr.Poster}" alt="image-not-found.gif" height="450" width="350">
               <h5>${showArr.Title}</h5>
               <a onclick="setShowID('${showArr.imdbID}')" class="btn btn-primary" href="showdetails.html">Show Details</a>
-              <a onclick="watchedShow('${showArr.imdbID}','${showArr.Title}')" class="btn btn-primary" href="#">✪</a>
+              <a onclick="watchedShow('${showArr.imdbID}','${showArr.Title}')" class="btn btn-primary" href="#">👁</a>
             </div>
           </div>
         `;
@@ -58,6 +63,7 @@ function setShowID(id){
 }
 
 function watchedShow(id, showName){
+  console.log(showName);
   var username = sessionStorage.getItem('username'); // change later so you have to be logged in
   if(callDB.setWatchedShow(id, showName, username)){
     alert("You watched this show.");

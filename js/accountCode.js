@@ -20,6 +20,8 @@ $(document).ready(function() {
     if(callDB.loginExistingAccount(loginusername, loginpassword)) {
         sessionStorage.setItem('username', loginusername);
         alert("Login was successful.");
+        window.open("index.html");
+        //test
     }
     else {
         alert("Login was unsuccessful.");
