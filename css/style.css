@@ -7,6 +7,15 @@ img {
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+body
+{
+    background-image: url('TVision-background.png'); 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .login-page {
   width: 360px;
   padding: 8% 0 0;

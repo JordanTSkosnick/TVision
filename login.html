@@ -2,8 +2,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel = "stylesheet" type = "text/css" href = "css/style.css">
   <title>Log in</title>
@@ -37,6 +35,9 @@
       output += `      
              <li class="nav-item">
                  <a class="nav-link" href="account.html">Account</a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" onclick="logout()" href="#">logout</a>
              </li>`;
     }
     else {

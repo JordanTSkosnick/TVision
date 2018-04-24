@@ -17,6 +17,9 @@
 
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="js/showCode.js"></script>
+  	<script src="js/accountCode.js"></script>
+  	<script src="js/searchForShowCode.js"></script>
+      <script src="js/callDB.js"></script>
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -37,6 +40,9 @@
       output += `      
              <li class="nav-item">
                  <a class="nav-link" href="account.html">Account</a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" onclick="logout()" href="#">logout</a>
              </li>`;
     }
     else {
@@ -59,9 +65,15 @@
 
 
 	<div class = "container">
-		<div id="showdetail">
+		<div id="showdetail"></div>
+	</div>
 
-		</div>
+	<div class = "container">
+		<div id="justText" class="row"></div>
+	</div>
+
+	<div class = "container">
+		<div id="shows" class="row"></div>
 	</div>
 </body>
 

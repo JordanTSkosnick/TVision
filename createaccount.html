@@ -33,10 +33,13 @@
               <li class="nav-item">
                 <a class="nav-link" href="ourrecommendedshows.html">Our Recommended Shows</a>
               </li>`;
-    if(sessionStorage.getItem('username')) {
+    if(sessionStorage.getItem('username')) {    
       output += `      
              <li class="nav-item">
                  <a class="nav-link" href="account.html">Account</a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link" onclick="logout()" href="#">logout</a>
              </li>`;
     }
     else {

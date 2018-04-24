@@ -8,10 +8,6 @@ $(document).ready(function() {
     getMultipleShowInfo(keyword);
     e.preventDefault();
   });
-
-  $('#watched').click(function(m) {
-    console.log("TEST");
-  });
 });
 
 function getMultipleShowInfo(keyword) {
@@ -27,7 +23,7 @@ function getMultipleShowInfo(keyword) {
               <h5>${showArr[i].Title}</h5>
               <a onclick="setShowID('${showArr[i].imdbID}')" class="btn btn-primary" href="showdetails.html">Show Details</a>`;
     if(sessionStorage.getItem('username')) {
-      output +=`<a id="watched" class="btn btn-primary" href="#">👁</a>
+      output +=`<a onclick="watchedShow('${showArr[i].imdbID}','${showArr[i].Title}'" class="btn btn-primary" href="#">👁</a>
             </div>
           </div>`;
     }
@@ -39,7 +35,6 @@ function getMultipleShowInfo(keyword) {
         $('#shows').html(output);
 	})
 }
-//onclick="watchedShow('${showArr[i].imdbID}','${showArr[i].Title}')"
 
 function setShowID(id){
 	sessionStorage.setItem('SHOW ID', id);

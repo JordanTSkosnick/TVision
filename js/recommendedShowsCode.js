@@ -1,13 +1,11 @@
 //Jordan Skosnick
 //API KEY = a082f301
-var recShows = ['Seinfeld', 'The Walking Dead', 'Grey\'s Anatomy','Riverdale','Band of Brothers', 'Planet Earth', 'Game of Thrones', 'Breaking Bad', 'The Wire', 
-		'Rick and Morty', 'Cosmos: A Spacetime Odyssey', 'Blue Planet', 'Cosmos', 'The World at War', 'The Sopranos', 
-		'Life', 'Avatar: The Last Airbender', 'Sherlock', 'Human Planet', 'The Civil War', 'The Twilight Zone', 'Dekalog',
-	        'Firefly', 'True Detective', 'Fullmetal Alchemist: Brotherhood', 'Last Week Tonight with John Oliver', 'Fargo',
-	        'Batman: The Animated Series', 'Death Note', 'The Blue Planet', 'One Punch Man', 'Cowboy Bebop', 'Frozen Planet',
-	        'Black Mirror', 'Pride and Prejudice', 'Africa', 'Stranger Things', 'Das Boot', 'Westworld', 'Arrested Development',
-	        'House of Cards', 'Friends', 'Only Fools and Horses....', 'Over the Garden Wall', 'TVF Pitchers',
-	        'Twin Peaks', 'Narcos', 'Freaks and Geeks', 'I, Claudius', 'Gravity Falls', 'Fawlty Towers'];
+var recShows = ['The Sopranos', 'The Wire', 'Breaking Bad', 'Mad Men', 'Seinfeld', 'The Simpsons', 'The Americans', 'Freaks and Geeks', 'Game of Thrones', 'The West Wing',
+                'Black Mirror', 'Narcos', 'The Crown', 'Sons of Anarchy', 'True Detective', 'Homeland', 'House', 'American Horror Story', 'Supernatural', 'Entourage',
+                'M*A*S*H', 'Twin Peaks', 'Star Trek', 'Curb Your Enthusiasm', 'Cheers', 'The Office', 'Friday Night Lights', 'Veep', 'Westworld', 'Lost', 'Mindhunter',
+                'Arrested Development', 'The X-Files', 'I Love Lucy', 'South Park', 'Stranger Things', 'Law & Order', 'Buffy the Vampire Slayer', 'Orange is the New Black',
+                'The Shield', 'Fargo', '24', 'Fawlty Towers', 'Roots', 'Sex and the City', 'The Wonder Years', 'Chappelle\'s Show', 'Happy Days', 'Vikings', 'Babylon Berlin',
+                'Roseanne', 'The Ren & Stimpy Show', 'The Walking Dead', 'House of Cards', 'Doctor Who', '30 Rock', 'Bloodline', 'Sherlock', 'Peaky Blinders', 'Downton Abbey'];
 
 //This is testing the array that will be created from the database where it keeps track of all the shows a particular user watches.
 
@@ -23,7 +21,6 @@ $(document).ready(function() {
       watchedShows = "Filler Show";
     }
   }
-  console.log(watchedShows);
 	compareList(recShows, watchedShows);
 });
 
@@ -49,11 +46,17 @@ function getOneShowInfo(showname){
             <div  class="text-center">
               <img src="${showArr.Poster}" alt="image-not-found.gif" height="450" width="350">
               <h5>${showArr.Title}</h5>
-              <a onclick="setShowID('${showArr.imdbID}')" class="btn btn-primary" href="showdetails.html">Show Details</a>
-              <a onclick="watchedShow('${showArr.imdbID}','${showArr.Title}')" class="btn btn-primary" href="#">👁</a>
+              <a onclick="setShowID('${showArr.imdbID}')" class="btn btn-primary" href="showdetails.html">Show Details</a>`;
+    if(sessionStorage.getItem('username')) {
+      output +=`<a onclick="watchedShow('${showArr.imdbID}','${showArr.Title}')" class="btn btn-primary" href="#">👁</a>
             </div>
-          </div>
-        `;
+          </div>`;
+    }
+    else {
+      output += ` </div>
+          </div>`;
+    }
+
         $('#shows').html(output);
 	})
 }
