@@ -1,5 +1,5 @@
 //Jordan Skosnick
-//API KEY = a082f301
+//API KEY = ||||||||||||
 
 //Creates an on submit listener for the search bar on the index page.
 $(document).ready(function() {
@@ -15,7 +15,7 @@ $(document).ready(function() {
 });
 
 function getMultipleShowInfo(keyword) {
-	axios.get('http://www.omdbapi.com?s='+keyword+'&type=series&apikey=a082f301') //Calls the API with the api key
+	axios.get('http://www.omdbapi.com?s='+keyword+'&type=series&apikey=9999999') //Calls the API with the api key
 	.then( function(res) {
 		var showArr = res.data.Search;
 		var output = '';
